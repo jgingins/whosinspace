@@ -14,14 +14,13 @@ public class main {
         printAstronauts(astronauts,nameWidth, craftWidth);
 
     }
-
     private static void printAstronauts(Astronauts astronauts, int nameWidth, int craftWidth) {
 
         System.out.print("Name");
-            for (int innerCount = 4; innerCount < nameWidth; innerCount++) {
-                System.out.print(" ");
-            }
-            System.out.print("| ");
+        for (int innerCount = 4; innerCount < nameWidth; innerCount++) {
+            System.out.print(" ");
+        }
+        System.out.print("| ");
         System.out.print("Craft");
         for (int innerCount = 5; innerCount < nameWidth; innerCount++) {
             System.out.print(" ");
@@ -45,7 +44,7 @@ public class main {
             System.out.print("\n"+astronauts.getPersonsName(count));
             for (int innerCount = astronauts.getPersonsName(count).length(); innerCount < nameWidth; innerCount++) {
                 System.out.print(" ");
-                }
+            }
             System.out.print("| ");
             System.out.print(astronauts.getPersonsCraft(count));
 
@@ -74,7 +73,7 @@ public class main {
         for(int num = 0; num < astronauts.getPeople().size(); num++)
         {
             if (field.equals("name")){
-            cur = astronauts.getPersonsName(num);
+                cur = astronauts.getPersonsName(num);
             }
             else if (field.equals("craft")){
                 cur = astronauts.getPersonsCraft(num);
@@ -87,4 +86,5 @@ public class main {
         // + 3 so the tab doesn't move it over
         return biggestLength+3;
     }
+
 }
