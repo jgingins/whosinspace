@@ -16,7 +16,42 @@ public class main {
     }
 
     private static void printAstronauts(Astronauts astronauts, int nameWidth, int craftWidth) {
-        System.out.println("hello "+ astronauts.getPersonsName(0)+" " +nameWidth);
+
+        System.out.print("Name");
+            for (int innerCount = 4; innerCount < nameWidth; innerCount++) {
+                System.out.print(" ");
+            }
+            System.out.print("| ");
+        System.out.print("Craft");
+        for (int innerCount = 5; innerCount < nameWidth; innerCount++) {
+            System.out.print(" ");
+        }
+        System.out.print("\n");
+
+
+        //print top bar
+        for (int count =0; count<nameWidth; count++) {
+            System.out.print("-");
+        }
+        System.out.print("|");
+        for (int count =0; count<craftWidth; count++) {
+            System.out.print("-");
+        }
+        System.out.print("| ");
+
+
+        //print name and craft
+        for (int count =0; count<astronauts.getNumber(); count++) {
+            System.out.print("\n"+astronauts.getPersonsName(count));
+            for (int innerCount = astronauts.getPersonsName(count).length(); innerCount < nameWidth; innerCount++) {
+                System.out.print(" ");
+                }
+            System.out.print("| ");
+            System.out.print(astronauts.getPersonsCraft(count));
+
+        }
+        System.out.print("\n");
+        //print bottom bar
         for (int count =0; count<nameWidth; count++) {
             System.out.print("-");
         }
@@ -25,7 +60,11 @@ public class main {
             System.out.print("-");
         }
         System.out.print("|");
+        System.out.print("\n");
+
+
     }
+
     private static int findWidest(Astronauts astronauts, String field) {
 
         int biggestLength = 0;
@@ -45,6 +84,7 @@ public class main {
                 biggestLength = curLength;
             }
         }
-        return biggestLength;
+        // + 3 so the tab doesn't move it over
+        return biggestLength+3;
     }
 }
