@@ -21,14 +21,14 @@ public class Astronauts {
   public String getMessage() {
     return message;
   }
-  public HashMap<String, String> getPerson(int place) {
-    return people.get(place);
+  public HashMap<String, String> getPersonAndCraft(int index) {
+    return people.get(index);
   }
-  public String getPersonsCraft(int place) {
-    return people.get(place).get("craft");
+  public String getPersonsCraft(int index) {
+    return people.get(index).get("craft");
   }
-  public String getPersonsName(int place) {
-    return people.get(place).get("name");
+  public String getPersonsName(int index) {
+    return people.get(index).get("name");
   }
   //this was going to take forever so I commented it out :)
 //  public String getAstronautJson() {

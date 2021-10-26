@@ -7,7 +7,6 @@ public class AstronautsInSpace {
 
         HttpClient myClient = new HttpClient("http://api.open-notify.org/astros.json");
         Astronauts astronauts = myClient.getAstronauts();
-        ArrayList<HashMap<String, String>> people = myClient.getAstronauts().getPeople();
 
         int nameWidth = findWidest(astronauts, "name");
         int craftWidth = findWidest(astronauts, "craft");

@@ -10,6 +10,7 @@ public class HttpClient {
     private final String baseUrl;
 
     public HttpClient(String baseUrl) {
+        //I passed in the url as a parameter because I thought it might help when testing
         this.baseUrl = baseUrl;
     }
 
