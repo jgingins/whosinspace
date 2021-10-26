@@ -45,6 +45,19 @@ public class test {
         int result = client.getAstronauts().getNumber();
         assertEquals(10, result);
     }
+    @Test
+    public void shouldReturnLastPersonsName() {
+        int last = client.getAstronauts().getNumber();
+        String result = client.getAstronauts().getPersonsName(last-1);
+        assertEquals("Ye Guangfu", result);
+    }
+    @Test
+    public void shouldReturnLastPersonsCraft() {
+        int last = client.getAstronauts().getNumber();
+        String result = client.getAstronauts().getPersonsCraft(last-1);
+        assertEquals("Shenzhou 13", result);
+    }
+
 
     //ran out of time
 //    @Test
