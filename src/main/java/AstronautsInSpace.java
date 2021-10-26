@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class main {
+public class AstronautsInSpace {
 
     public static void main(String args[]) {
 
