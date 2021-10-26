@@ -9,8 +9,8 @@ public class main {
         Astronauts astronauts = myClient.getAstronauts();
         ArrayList<HashMap<String, String>> people = myClient.getAstronauts().getPeople();
 
-        int nameWidth = findWidestName(astronauts);
-        int craftWidth = findWidestCraft(astronauts);
+        int nameWidth = findWidest(astronauts, "name");
+        int craftWidth = findWidest(astronauts, "craft");
         printAstronauts(astronauts,nameWidth, craftWidth);
 
     }
@@ -43,20 +43,25 @@ public class main {
         }
         return biggestNameLength;
     }
-    private static int findWidest(Astronauts astronauts) {
+    private static int findWidest(Astronauts astronauts, String field) {
 
-        int biggestNameLength = 0;
-        String curName;
-        int curNameLength;
+        int biggestLength = 0;
+        String cur = "";
+        int curLength;
 
         for(int num = 0; num < astronauts.getPeople().size(); num++)
         {
-            curName = astronauts.getPersonsName(num);
-            curNameLength = curName.length();
-            if (curNameLength > biggestNameLength) {
-                biggestNameLength = curNameLength;
+            if (field.equals("name")){
+            cur = astronauts.getPersonsName(num);
+            }
+            else if (field.equals("craft")){
+                cur = astronauts.getPersonsCraft(num);
+            }
+            curLength = cur.length();
+            if (curLength > biggestLength) {
+                biggestLength = curLength;
             }
         }
-        return biggestNameLength;
+        return biggestLength;
     }
 }
